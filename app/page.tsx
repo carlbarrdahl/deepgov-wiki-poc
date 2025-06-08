@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import { searchFiles } from "@/lib/mddb";
+import { getFiles, searchFiles } from "@/lib/mddb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BackgroundImage } from "@/components/background-image";
@@ -11,7 +11,7 @@ export default async function Home({
   searchParams: Promise<{ search: string }>;
 }) {
   const { search = "" } = await searchParams;
-  const files = await searchFiles(search);
+  const files = await getFiles();
 
   return (
     <div>
