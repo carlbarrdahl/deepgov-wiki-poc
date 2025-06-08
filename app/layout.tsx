@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="border-b mb-8">
+          <Link href="/">
+            <div className=" h-16 max-w-screen-lg mx-auto  flex items-center">
+              <h1 className="text-sm font-bold">DeepGov Wiki</h1>
+            </div>
+          </Link>
+        </header>
+        <main className="mx-auto max-w-screen-lg">{children}</main>
       </body>
     </html>
   );
