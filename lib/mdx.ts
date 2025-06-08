@@ -7,7 +7,7 @@ import { Frontmatter } from "./mddb";
 import { citePlugin } from "@benrbray/remark-cite";
 import remarkGfm from "remark-gfm";
 
-const bibliography = fs.readFileSync("references.bib", "utf8");
+// const bibliography = fs.readFileSync("references.bib", "utf8");
 
 export async function loadFile(slug: string) {
   const filePath = path.join(process.cwd(), "wiki", slug + ".mdx");
@@ -21,25 +21,25 @@ export async function loadFile(slug: string) {
           remarkGfm as any,
           [
             citePlugin,
-            {
-              // TODO: Why is this not working?
-              bibliography,
-              style: "apa",
-              linkCitations: true,
-              syntax: {
-                // see micromark-extension-cite
-                enableAltSyntax: false,
-                enablePandocSyntax: true,
-              },
-              toMarkdown: {
-                // see mdast-util-cite
-                standardizeAltSyntax: false,
-                enableAuthorSuppression: true,
-                useNodeValue: false,
-              },
-              showTooltips: true,
-              tooltipAttribute: "data-tooltip",
-            },
+            // {
+            //   // TODO: Why is this not working?
+            //   bibliography,
+            //   style: "apa",
+            //   linkCitations: true,
+            //   syntax: {
+            //     // see micromark-extension-cite
+            //     enableAltSyntax: false,
+            //     enablePandocSyntax: true,
+            //   },
+            //   toMarkdown: {
+            //     // see mdast-util-cite
+            //     standardizeAltSyntax: false,
+            //     enableAuthorSuppression: true,
+            //     useNodeValue: false,
+            //   },
+            //   showTooltips: true,
+            //   tooltipAttribute: "data-tooltip",
+            // },
           ],
         ],
       },
