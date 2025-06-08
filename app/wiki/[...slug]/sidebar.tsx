@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { PropsWithChildren } from "react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
