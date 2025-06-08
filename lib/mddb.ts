@@ -2,9 +2,10 @@ import { MarkdownDB } from "mddb";
 import { MddbFile } from "mddb/dist/src/lib/schema";
 import knex from "knex";
 
+const DATABASE_URL = process.env.DATABASE_URL;
 const config = {
-  client: "better-sqlite3",
-  connection: {
+  client: DATABASE_URL ? "pg" : "better-sqlite3",
+  connection: DATABASE_URL || {
     filename: "markdown.db",
   },
 };

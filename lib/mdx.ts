@@ -16,8 +16,9 @@ export async function loadFile(slug: string) {
     options: {
       parseFrontmatter: true,
       mdxOptions: {
+        format: "mdx",
         remarkPlugins: [
-          remarkGfm,
+          remarkGfm as any,
           [
             citePlugin,
             {
