@@ -7,7 +7,7 @@
     "filetype": null,
     "metadata": {
       "title": "Clean Water Access Initiative",
-      "tagline": "Providing sustainable clean water solutions to remote communities in East Africa.",
+      "description": "Providing sustainable clean water solutions to remote communities in East Africa.",
       "image": "https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?auto=format&fit=crop&w=800&q=80",
       "category": "Environment",
       "subcategory": "Water Conservation",
@@ -69,26 +69,14 @@
         "text": "https://cleanwaterinitiative.org",
         "embed": false,
         "internal": false
-      },
-      {
-        "from": "clean-water-access-initiative.mdx",
-        "to": "Rural Solar Electrification Network",
-        "toRaw": "Rural Solar Electrification Network",
-        "text": "",
-        "embed": false,
-        "internal": true
-      },
-      {
-        "from": "clean-water-access-initiative.mdx",
-        "to": "wiki/rural-solar-electrification-network.mdx",
-        "toRaw": "wiki/rural-solar-electrification-network.mdx",
-        "text": "",
-        "embed": false,
-        "internal": true
       }
     ],
     "tasks": [],
-    "title": "Project Overview"
+    "title": "Project Overview",
+    "references": [
+      "who_water_quality",
+      "un_sdg6"
+    ]
   },
   {
     "_id": "4319d6b8c9bba9ea8f74597d2c0cd9071f015c55",
@@ -98,7 +86,7 @@
     "filetype": null,
     "metadata": {
       "title": "Rural Solar Electrification Network",
-      "tagline": "Developing distributed solar microgrids to power rural communities without access to the electrical grid.",
+      "description": "Developing distributed solar microgrids to power rural communities without access to the electrical grid.",
       "image": "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80",
       "category": "Infrastructure",
       "subcategory": "Renewable Energy",
@@ -164,6 +152,7 @@
       }
     ],
     "tasks": [],
-    "title": "Project Scope"
+    "title": "Project Scope",
+    "references": []
   }
 ]
