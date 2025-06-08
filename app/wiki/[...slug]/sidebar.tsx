@@ -42,7 +42,7 @@ export function WikiSidebar(props: Frontmatter) {
       <Card>
         <CardHeader className="pb-4">
           <div className="aspect-video rounded-lg overflow-hidden mb-4">
-            <Image
+            <img
               src={image || "/placeholder.svg?height=200&width=300"}
               alt={title}
               className="w-full h-full object-cover"

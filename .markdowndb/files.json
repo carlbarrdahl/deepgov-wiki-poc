@@ -69,9 +69,26 @@
         "text": "https://cleanwaterinitiative.org",
         "embed": false,
         "internal": false
+      },
+      {
+        "from": "clean-water-access-initiative.mdx",
+        "to": "Rural Solar Electrification Network",
+        "toRaw": "Rural Solar Electrification Network",
+        "text": "",
+        "embed": false,
+        "internal": true
+      },
+      {
+        "from": "clean-water-access-initiative.mdx",
+        "to": "wiki/rural-solar-electrification-network.mdx",
+        "toRaw": "wiki/rural-solar-electrification-network.mdx",
+        "text": "",
+        "embed": false,
+        "internal": true
       }
     ],
-    "tasks": []
+    "tasks": [],
+    "title": "Project Overview"
   },
   {
     "_id": "4319d6b8c9bba9ea8f74597d2c0cd9071f015c55",
@@ -146,6 +163,7 @@
         "internal": false
       }
     ],
-    "tasks": []
+    "tasks": [],
+    "title": "Project Scope"
   }
 ]

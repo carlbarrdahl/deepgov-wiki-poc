@@ -1,19 +1,21 @@
 import { MarkdownDB } from "mddb";
 import { MddbFile } from "mddb/dist/src/lib/schema";
+import knex from "knex";
 
-const client = new MarkdownDB({
+const config = {
   client: "better-sqlite3",
   connection: {
     filename: "markdown.db",
   },
-}).init();
+};
+const client = new MarkdownDB(config).init();
+
+const db = knex(config);
 
 export async function getFiles() {
   const mddb = await client;
   return mddb.getFiles({
-    frontmatter: {
-      draft: false,
-    },
+    frontmatter: {},
   }) as Promise<(MddbFile & { metadata: Frontmatter })[]>;
 }
 
@@ -21,6 +23,14 @@ export async function getFile(slug: string) {
   const mddb = await client;
 
   return await mddb.getFileByUrl(slug);
+}
+
+export async function searchFiles(keyword: string) {
+  const results = await db("files")
+    .select("*")
+    .whereLike("metadata", `%${keyword}%`);
+
+  return results.map((r) => ({ ...r, metadata: JSON.parse(r.metadata) }));
 }
 
 export default client;

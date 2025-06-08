@@ -1,18 +1,23 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import { getFiles } from "@/lib/mddb";
+import { searchFiles } from "@/lib/mddb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BackgroundImage } from "@/components/background-image";
 
-export default async function Home({}) {
-  const files = await getFiles();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ search: string }>;
+}) {
+  const { search = "" } = await searchParams;
+  const files = await searchFiles(search);
 
   return (
     <div>
       <div className="space-y-4 flex flex-col">
         {files.map((project) => {
-          const { title, image, tagline, location, category } =
+          const { title, image, tagline, location, category, open_source } =
             project.metadata;
           return (
             <Link href={`/wiki/${project.url_path}`} key={project.url_path}>
@@ -39,7 +44,7 @@ export default async function Home({}) {
                           {location}
                         </div>
                         <Badge variant="secondary">{category}</Badge>
-                        <Badge>Open Source</Badge>
+                        {open_source === "Yes" && <Badge>Open Source</Badge>}
                       </div>
                     </div>
                   </div>
