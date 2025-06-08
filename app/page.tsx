@@ -17,7 +17,7 @@ export default async function Home({
     <div>
       <div className="space-y-4 flex flex-col">
         {files.map((project) => {
-          const { title, image, tagline, location, category, open_source } =
+          const { title, image, description, location, category, open_source } =
             project.metadata;
           return (
             <Link href={`/wiki/${project.url_path}`} key={project.url_path}>
@@ -36,7 +36,7 @@ export default async function Home({
                         {title}
                       </h3>
                       <p className="text-gray-600 mb-3 line-clamp-2">
-                        {tagline}
+                        {description}
                       </p>
                       <div className="flex items-center gap-4 text-sm text-gray-500">
                         <div className="flex items-center gap-1">
