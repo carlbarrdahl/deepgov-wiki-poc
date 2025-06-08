@@ -10,6 +10,8 @@ const config = {
   },
 };
 
+console.log(config);
+
 // const config = {
 //   client: "better-sqlite3",
 //   connection: {
