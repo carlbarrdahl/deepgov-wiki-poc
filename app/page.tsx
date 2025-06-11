@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import { getFiles, searchFiles } from "@/lib/mddb";
+import { getFiles } from "@/lib/mddb";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BackgroundImage } from "@/components/background-image";
@@ -15,7 +15,7 @@ export default async function Home({
 
   return (
     <div>
-      <div className="space-y-4 flex flex-col">
+      <div className="space-y-4 gap-2 grid grid-cols-2">
         {files.map((project) => {
           const { title, image, description, location, category, open_source } =
             project.metadata;
@@ -23,7 +23,7 @@ export default async function Home({
             <Link href={`/wiki/${project.url_path}`} key={project.url_path}>
               <Card
                 key={project.id}
-                className="hover:bg-muted transition-colors py-0"
+                className="hover:bg-muted transition-colors py-0 shadow-none"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">

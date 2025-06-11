@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Libre_Baskerville, Karla } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { WalletConnect } from "@/components/wallet-connect";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = Karla({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const fontSerif = Libre_Baskerville({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -26,16 +34,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${fontSans.variable} ${fontSerif.variable} ${geistMono.variable} antialiased font-sans`}
       >
-        <header className="border-b">
-          <Link href="/">
-            <div className=" h-16 max-w-screen-lg mx-auto  flex items-center">
-              <h1 className="text-sm font-bold">DeepGov Wiki</h1>
+        <div className="min-h-screen flex flex-col bg-background">
+          <header className="border-b border-border/40 bg-background">
+            <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/"
+                  className="font-serif font-semibold flex items-center gap-2"
+                >
+                  <img src="/hero.png" alt="DeepGov Wiki" className="w-9 h-9" />
+                  <div className="flex items-center gap-2">
+                    <h2 className="text-xl font-medium text-primary">
+                      DeepGov Wiki
+                    </h2>
+                  </div>
+                </Link>
+              </div>
+              <WalletConnect />
             </div>
-          </Link>
-        </header>
-        <main className="mx-auto max-w-screen-lg pt-8">{children}</main>
+          </header>
+          <main className="container w-full py-6 flex-grow px-3 sm:px-4">
+            {children}
+          </main>
+          <footer className="border-t border-wiki-border py-6 mt-auto w-full">
+            <div className="container w-full text-center text-sm text-wiki-muted px-4">
+              <p>© {new Date().getFullYear()} DeepGov by Eval.Science</p>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
