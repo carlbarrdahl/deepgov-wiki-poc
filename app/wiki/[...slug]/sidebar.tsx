@@ -37,9 +37,9 @@ export function WikiSidebar(props: Frontmatter) {
   } = props;
 
   return (
-    <div className="w-80 p-6 border-l bg-gray-50">
+    <div className="w-80 p-6 border-l bg-gray-50 font-sans">
       <Card>
-        <CardHeader className="pb-4">
+        <CardHeader className="">
           <div className="aspect-video rounded-lg overflow-hidden mb-4">
             <img
               src={image || "/placeholder.svg?height=200&width=300"}
@@ -47,7 +47,6 @@ export function WikiSidebar(props: Frontmatter) {
               className="w-full h-full object-cover"
             />
           </div>
-          <CardTitle className="text-center text-lg">{title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Basic Info Grid */}

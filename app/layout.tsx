@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontSans.variable} ${fontSerif.variable} ${geistMono.variable} antialiased font-sans`}
+        className={`${fontSans.variable} ${fontSerif.variable} ${geistMono.variable} antialiased font-serif`}
       >
         <div className="min-h-screen flex flex-col bg-background">
           <header className="border-b border-border/40 bg-background">
